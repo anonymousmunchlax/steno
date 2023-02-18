@@ -20,20 +20,20 @@ json_str = json.dumps(word_pairs)
 word_pairs_list = json.loads(json_str)
 
 # Generate table data
-table_data = [('"{} {}"'.format(pair[0], pair[1]),) for pair in word_pairs_list]
+table_data = [('"{}": "{}",'.format(pair[0], pair[1]),) for pair in word_pairs_list]
 
 # Generate the table string
 table_string = tabulate(table_data, tablefmt="plain")
 
 # Create a new document
-document = Document()
+#document = Document()
 
 # Add the table string as a paragraph to the document
-document.add_paragraph(table_string)
+#document.add_paragraph(table_string)
 
 # Save the document
-document.save("output3.docx")
+# document.save("output2.docx")
 
 # Print the JSON string
-#print(table_string)
+print(table_string)
 
